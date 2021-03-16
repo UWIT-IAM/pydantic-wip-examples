@@ -17,5 +17,5 @@ class UserORM(Base):
     __tablename__ = 'User'
     user_id: int = Column(Integer, primary_key=True)
     username: str = Column(String, unique=True)
-    settings_id: int = Column(Integer, ForeignKey('UserSettings.settings_id'))
+    settings_id: int = Column(Integer, ForeignKey('UserSettings.settings_id'), nullable=False)
     settings: UserSettingsORM = relationship('UserSettingsORM')

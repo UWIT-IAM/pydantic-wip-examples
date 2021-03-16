@@ -30,6 +30,7 @@ class UserSettingsBase(ORMProxyBase):
     email_subscription: bool = False
     private_profile: bool = True
     email_address: Optional[EmailStr]
+    settings_id: Optional[int]
 
 
 class UserBase(ORMProxyBase):

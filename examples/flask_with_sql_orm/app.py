@@ -56,9 +56,7 @@ def create_user() -> str:
     # First, we parse and validate the user data.
     try:
         form_data = dict(flask_request.form)
-        print(form_data)
         request_input = CreateUserInput.parse_obj(form_data)
-        print(request_input)
     except ValidationError as e:
         print(e)
         raise exceptions.BadRequest(e.json())
