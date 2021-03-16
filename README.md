@@ -1,7 +1,9 @@
 # pydantic-wip-examples
-A repository of pydantic use case examples. 
 
-Ok, right now, there is only one example. You can run it like so:
+A repository of pydantic use case examples, introduced in the UW-IT ITI WIP talk on 
+[pydantic]. You can also refer to [the slides](https://docs.google.com/presentation/d/1OY7AbYWmN-hjOo8pk-vGYQ4InNEBF5ZOhexe18uGnlU/edit?usp=sharing).
+
+(Ok, right now, there is only one example.) You can run it like so:
 
 ```
 ./run-example.sh -e flask_with_sql_orm
