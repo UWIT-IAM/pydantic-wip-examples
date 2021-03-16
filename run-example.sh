@@ -10,8 +10,6 @@ Required:
 
 Options:
   --build / -b : Re-build the image before running.
-  --mount / -m : Live-mount the example code onto the container, so that you can see
-                 results as you fiddle with things.
   --help / -h  :  Display this mesage and exit.'
 
 BUILD=
@@ -27,10 +25,6 @@ do
       shift
       EXAMPLE=$1
       ;;
-    --mount|-m)
-      shift
-      LIVE_MOUNT=1
-      ;;
     --help|-h)
       echo "${HELP_TEXT}"
       exit 1
@@ -40,7 +34,6 @@ done
 
 test -n "${BUILD}" && docker build .
 test -n "${LIVE_MOUNT}" && \
-  export LIVE_MOUNT="--volume $(pwd)/examples:/pydantic-examples/examples"
 
 if [[ -z "${EXAMPLE}" ]]
 then
@@ -50,7 +43,7 @@ fi
 
 EXAMPLE_PATH=$(pwd)/examples/${EXAMPLE}
 
-source $EXAMPLE_PATH/.example.sh
 
 set -ex
+source $EXAMPLE_PATH/.example.sh
 docker run $DOCKER_RUN_ARGS -it pydantic-examples $DOCKER_RUN_COMMAND
