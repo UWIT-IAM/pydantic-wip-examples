@@ -32,7 +32,7 @@ do
   shift
 done
 
-test -n "${BUILD}" && docker build .
+test -n "${BUILD}" && docker build . -t pydantic-examples
 test -n "${LIVE_MOUNT}" && \
 
 if [[ -z "${EXAMPLE}" ]]
